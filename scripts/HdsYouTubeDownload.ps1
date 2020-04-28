@@ -26,7 +26,12 @@ if($skipDownload){
 }else{
     youtube-dl -o "$down" "$url"
     if(!$?){throw "youtube-dl failed"}
-    $down="$down.mkv"
+    if([System.IO.File]::Exists("$down.mkv")){
+        $down="$down.mkv"
+    }else{
+        $down="$down.webm"
+    }
+    
     if($noConvert){
         return $out
     }
