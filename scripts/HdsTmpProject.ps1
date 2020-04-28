@@ -1,10 +1,10 @@
 #!/usr/local/bin/pwsh
 param(
-    [string]$name
+    [string]$name=(throw "-name required")
 )
 
-if(!$name){
-    $name="Tmp-"+(New-Guid).ToString()
+if([System.String]::IsNullOrWhiteSpace($name)){
+    throw "Empty name"
 }
 
 $tmpDir="$PSScriptRoot/../../TmpProjects"
