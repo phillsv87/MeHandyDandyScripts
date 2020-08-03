@@ -10,6 +10,8 @@ $ErrorActionPreference="Stop"
 # # youtube-dl install
 # # https://github.com/ytdl-org/youtube-dl/
 # brew install youtube-dl
+# # update
+# brew upgrade youtube-dl
 
 $out=[System.IO.Path]::GetFullPath($out)
 
