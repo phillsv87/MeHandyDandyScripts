@@ -10,7 +10,7 @@ Write-Host $p
 
 if(!$noBase64){
     $b = [System.Text.Encoding]::UTF8.GetBytes($p)
-    $p =[Convert]::ToBase64String($b)
+    $p =[Convert]::ToBase64String($b).Trim("=")
 }
 
 if(!$noCopy){
