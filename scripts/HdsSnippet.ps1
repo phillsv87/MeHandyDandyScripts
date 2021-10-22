@@ -17,6 +17,8 @@ if($source){
     $clipboard=$true
 }
 
+$content=$content.Replace('$','$$');
+
 $lines=$content.Split("`n");
 for($i=0;$i -lt $lines.Length;$i++){
     $lines[$i]=$lines[$i].Trim("`r")
