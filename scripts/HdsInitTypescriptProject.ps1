@@ -24,7 +24,7 @@ Set-Content -Path package.json -Value $package
 npm install
 if(!$?){throw "npm install failed"}
 
-npm i --save-dev typescript ts-node nodemon
+npm i --save-dev typescript ts-node nodemon @types/node
 if(!$?){throw "npm install dev deps failed"}
 
 code .
