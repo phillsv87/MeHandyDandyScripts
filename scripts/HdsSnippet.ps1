@@ -17,7 +17,7 @@ if($source){
     $clipboard=$true
 }
 
-$content=$content.Replace('$','$$');
+$content=$content.Replace('$','\$');
 
 $lines=$content.Split("`n");
 for($i=0;$i -lt $lines.Length;$i++){
@@ -33,7 +33,7 @@ $obj=[ordered]@{
     }
 }
 
-$content=($obj | ConvertTo-Json).ToString()
+$content=($obj | ConvertTo-Json).ToString().Trim().TrimStart('{').TrimEnd('}')
 
 if($clipboard){
     Set-Clipboard $content
