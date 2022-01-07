@@ -1,0 +1,10 @@
+{
+    "dependencies":[
+
+    ],
+    "devDependencies":[
+        "@types/node",
+        "ts-node",
+        "typescript"
+    ]
+}

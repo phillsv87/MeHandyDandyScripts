@@ -1,0 +1,26 @@
+{
+  "name": "@iyio/__PACKAGE_NAME__",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "cli": "ts-node index.ts",
+    "build": "tsc",
+    "build-publish": "npm run build && npm publish"
+  },
+  "bin": {
+    "__BIN_NAME__": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "directory": "__REPO_DIR__",
+    "url": "__REPO_URL__"
+  },
+  "keywords": [],
+  "author": "Scott Vance",
+  "license": "ISC"
+}
