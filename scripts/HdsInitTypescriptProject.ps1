@@ -10,7 +10,7 @@ if(!$path){
     $path=$name
 }
 
-if(Test-Path $path){
+if($path -ne "." -And (Test-Path $path)){
     throw "$path already exists"
 }
 
@@ -32,8 +32,10 @@ $repoUrl=$Matches.0
 
 
 
-mkdir $path
-if(!$?){throw "mkdir failed"}
+if($path -ne "."){
+    mkdir $path
+    if(!$?){throw "mkdir failed"}
+}
 
 cd $path
 if(!$?){throw "cd failed"}
