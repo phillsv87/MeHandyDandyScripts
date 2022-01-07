@@ -49,6 +49,9 @@ echo '/dist' >> '.gitignore'
 cp -v -r $templatePath ./
 if(!$?){throw "copy template files failed"}
 
+mv index.ts "$name-index.ts"
+if(!$?){throw "move index failed"}
+
 $package=Get-Content -Path package.json -Raw
 $package=$package.Replace('__PACKAGE_NAME__',$name)
 $package=$package.Replace('__BIN_NAME__',$name.Replace('-cli',''))
