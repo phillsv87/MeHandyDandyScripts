@@ -1,21 +1,32 @@
 #!/usr/local/bin/pwsh
 param(
-    [switch]$noCopy,
-    [switch]$noBase64
+    [switch]$noCopy
 )
 
-$p = ([char[]]([char]65..[char]90) + ([char[]]([char]97..[char]122)) + 0..9 | Sort-Object {Get-Random})[0..30] -join ''
+function GeneratePassword {
 
-Write-Host $p
+    param(
+        [int]$length=30
+    )
+    
+    $chars=( ([byte]65..[byte]90) + ([byte]97..[byte]122) + ([byte]48..[byte]57))
 
-if(!$noBase64){
-    $b = [System.Text.Encoding]::UTF8.GetBytes($p)
-    $p =[Convert]::ToBase64String($b).Trim("=")
+    $buf=[System.Byte[]]::CreateInstance([System.Byte],$length)
+    $stream=[System.IO.File]::OpenRead('/dev/urandom')
+    $stream.Read($buf,0,$length) | Out-Null
+
+    for($i=0;$i -lt $length;$i++){
+        $buf[$i]=$chars[$buf[$i]%$chars.Length]
+    }
+
+    return [System.Text.Encoding]::ASCII.GetString($buf)
 }
+
+$p = GeneratePassword
 
 if(!$noCopy){
     try{
-        Set-Clipboard -Value $p
+        Set-Clipboard -Value $p | Out-Null
     }catch{
         &"$PSScriptRoot/HdsSetClipboard.sh" "$p"
     }
