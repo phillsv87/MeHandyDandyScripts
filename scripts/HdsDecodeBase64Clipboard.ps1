@@ -1,4 +1,4 @@
-#!/usr/local/bin/pwsh
+#!/usr/bin/env pwsh
 $ErrorActionPreference="Stop"
 
 [string]$content=pbpaste -Prefer txt

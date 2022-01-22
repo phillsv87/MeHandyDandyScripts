@@ -1,4 +1,4 @@
-#!/usr/local/bin/pwsh
+#!/usr/bin/env pwsh
 param(
     [string]$url=$(throw "-url required"),
     [string]$out=$(throw "-out required"),

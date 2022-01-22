@@ -1,4 +1,4 @@
-#!/usr/local/bin/pwsh
+#!/usr/bin/env pwsh
 $content=pbpaste -Prefer txt
 
 $b = [System.Text.Encoding]::UTF8.GetBytes($content)

@@ -1,4 +1,4 @@
-#!/usr/local/bin/pwsh
+#!/usr/bin/env pwsh
 
 $date1 = Get-Date -Date "01/01/1970"
 $date2 = Get-Date

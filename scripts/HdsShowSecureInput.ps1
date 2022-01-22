@@ -1,4 +1,4 @@
-#!/usr/local/bin/pwsh
+#!/usr/bin/env pwsh
 
 # Shows the process that currently has secure input. The -pidOnly flag can be used to only return the
 # pid, this is usefully for scripting. If not proces is found with secure input the command

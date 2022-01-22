@@ -1,4 +1,4 @@
-#!/usr/local/bin/pwsh
+#!/usr/bin/env pwsh
 param(
     [double]$low=0.1,
     [double]$high=1,
