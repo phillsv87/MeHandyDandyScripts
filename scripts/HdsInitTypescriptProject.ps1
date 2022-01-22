@@ -6,6 +6,9 @@ param(
 )
 $ErrorActionPreference="Stop"
 
+$fullName=$name
+$name=$name.Split('/')[-1]
+
 if(!$path){
     $path=$name
 }
@@ -33,7 +36,7 @@ $repoUrl=$Matches.0
 
 
 if($path -ne "."){
-    mkdir $path
+    mkdir -p $path
     if(!$?){throw "mkdir failed"}
 }
 
@@ -55,7 +58,7 @@ mv index.ts "$name-index.ts"
 if(!$?){throw "move index failed"}
 
 $package=Get-Content -Path package.json -Raw
-$package=$package.Replace('__PACKAGE_NAME__',$name)
+$package=$package.Replace('__PACKAGE_NAME__',$fullName)
 $package=$package.Replace('__BIN_NAME__',$name.Replace('-cli',''))
 $package=$package.Replace('__REPO_URL__',$repoUrl)
 $package=$package.Replace('__REPO_DIR__',$repoDir)

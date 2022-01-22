@@ -1,5 +1,5 @@
 {
-  "name": "@iyio/__PACKAGE_NAME__",
+  "name": "__PACKAGE_NAME__",
   "version": "0.0.1",
   "description": "",
   "main": "dist/__PACKAGE_NAME__-index.js",
