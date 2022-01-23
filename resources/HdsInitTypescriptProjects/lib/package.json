@@ -2,8 +2,8 @@
   "name": "__PACKAGE_NAME__",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/__PACKAGE_NAME__-index.js",
-  "types": "dist/__PACKAGE_NAME__-index.d.ts",
+  "main": "dist/__NAME__-index.js",
+  "types": "dist/__NAME__-index.d.ts",
   "scripts": {
     "watch": "tsc --watch",
     "build": "tsc",

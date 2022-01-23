@@ -2,18 +2,18 @@
   "name": "__PACKAGE_NAME__",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/__PACKAGE_NAME__-index.js",
-  "types": "dist/__PACKAGE_NAME__-index.d.ts",
+  "main": "dist/__NAME__-index.js",
+  "types": "dist/__NAME__-index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "cli": "ts-node __PACKAGE_NAME__-index.ts",
+    "cli": "ts-node __NAME__-index.ts",
     "build": "tsc",
     "build-publish": "npm run build && npm publish"
   },
   "bin": {
-    "__BIN_NAME__": "dist/__PACKAGE_NAME__-index.js"
+    "__BIN_NAME__": "dist/__NAME__-index.js"
   },
   "repository": {
     "type": "git",

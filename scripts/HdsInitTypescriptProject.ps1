@@ -59,6 +59,7 @@ if(!$?){throw "move index failed"}
 
 $package=Get-Content -Path package.json -Raw
 $package=$package.Replace('__PACKAGE_NAME__',$fullName)
+$package=$package.Replace('__NAME__',$name)
 $package=$package.Replace('__BIN_NAME__',$name.Replace('-cli',''))
 $package=$package.Replace('__REPO_URL__',$repoUrl)
 $package=$package.Replace('__REPO_DIR__',$repoDir)
