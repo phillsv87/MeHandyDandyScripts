@@ -8,7 +8,7 @@ $randomNames=&"$PSScriptRoot/../resources/RandomNames.ps1"
 $rName=$randomNames[$time%$randomNames.Length]
 
 $date=Get-Date -Format "yyyy-MM-dd-"
-$name="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Notes/random/$date$rName.md"
+$name="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Notes/$date$rName.md"
 
 $env:TM_PROJECT_UUID='00000000-0000-0000-0000-000000000000'
 mate $name
