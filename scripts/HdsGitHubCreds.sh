@@ -48,3 +48,5 @@ github.com:
     user: $name
     git_protocol: https
 EOF
+
+gh auth status
