@@ -1,0 +1,26 @@
+{
+  "name": "mehandydandyscripts",
+  "version": "1.0.0",
+  "description": "Everyday scripts I use",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillsv87/MeHandyDandyScripts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillsv87/MeHandyDandyScripts/issues"
+  },
+  "homepage": "https://github.com/phillsv87/MeHandyDandyScripts#readme",
+  "dependencies": {
+    "command-line-args": "^5.2.1",
+    "json5": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.2.0"
+  }
+}
