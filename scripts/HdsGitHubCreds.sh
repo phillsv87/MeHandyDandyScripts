@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-usageStr='Usage: HdsGitHubCreds.sh [add] <username>'
+usageStr='Usage: HdsGitHubCreds.sh [set] <username>'
 
 name=$1
 
@@ -13,7 +13,7 @@ if [ "$name" == "" ]; then
 fi
 
 
-if [ "$name" == "add" ]; then
+if [ "$name" == "set" ]; then
 
     name=$2
     if [ "$name" == "" ]; then
@@ -50,3 +50,9 @@ github.com:
 EOF
 
 gh auth status
+
+if [ "$?" != "0" ]; then
+    echo "Auth status failed. Token may need to be updated. Try running:"
+    echo "HdsGitHubCreds.sh set $name"
+    exit 1
+fi
