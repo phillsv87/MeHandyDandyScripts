@@ -8,6 +8,6 @@ tell application "System Preferences"
     delay 1
     tell application "System Events" to click first pop up button of first window of application process "System Preferences" of application "System Events"
     delay 1
-    tell application "System Events" to click menu item "iPad (2)" of first menu of first pop up button of first window of application process "System Preferences" of application "System Events"
+    tell application "System Events" to click menu item "ScottPad" of first menu of first pop up button of first window of application process "System Preferences" of application "System Events"
     quit
 end tell';
