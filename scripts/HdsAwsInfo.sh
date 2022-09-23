@@ -1,4 +1,8 @@
 #!/bin/bash
 set -e
 
-aws sts get-caller-identity
+if [ "$1" == "" ]; then
+    aws sts get-caller-identity
+else
+    aws sts get-caller-identity --profile "$1"
+fi
