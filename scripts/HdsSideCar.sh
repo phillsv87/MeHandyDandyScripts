@@ -126,6 +126,8 @@ on run {}
 
     sidecar_connection("ScottPad")
 
+	delay 5
+
     quit application "System Settings"
     
 end run';
